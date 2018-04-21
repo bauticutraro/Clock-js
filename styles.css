@@ -27,13 +27,13 @@ body * { position: relative; }
 
 .container {
     display: flex;
-    font-size: 2.5rem;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     height: 100vh;
     user-select: none;
     position: relative;
+    text-align: center;
 }
 
 .date,
@@ -45,11 +45,24 @@ body * { position: relative; }
 }
 
 .time-item {
-    font-size: 6rem;
+    font-size: 5rem;
+    transition: .4s all ease
 }
 
 .date-item {
     margin-right: 4px;
     margin-left: 4px; 
+    font-size: 1.7rem;    
+    transition: .4s all ease
 }
 
+
+@media screen and (min-width: 600px) {
+    .time-item { font-size: 6rem; }  
+    .date-item { font-size: 2.5rem; }
+}
+
+@media screen and (max-width: 350px) {
+    .time-item { font-size: 3rem; }  
+    .date-item { font-size: 1rem; }
+}

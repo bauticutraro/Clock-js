@@ -9,13 +9,23 @@
 
     let time = () => {
         date = new Date();
+        let hours = date.getHours(),
+            minutes = date.getMinutes(),
+            seconds = date.getSeconds();  
+            
+         if (hours < 10) 
+            hours = `0${hours}`;
+            
+        if (minutes < 10) 
+            minutes = `0${minutes}`;
+
+        if (seconds < 10) 
+            seconds = `0${seconds}`;      
 
         dateItem.textContent = `${arrayDay[date.getDay()]} ${date.getDate()} de ${arrayMonth[date.getMonth()]} del ${date.getFullYear()}`
-        timeItem.textContent = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+        timeItem.textContent = `${hours}:${minutes}:${seconds}`;
 
-        if (date.getSeconds() < 10) {
-            timeItem.textContent = `${date.getHours()}:${date.getMinutes()}:0${date.getSeconds()}`;
-        }
+  
     }
 
     time();
